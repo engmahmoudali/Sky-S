@@ -40,12 +40,21 @@ class LoginController extends Controller
 
     public function username()
     {
-        if (isset($_POST['phone'])) {
-            return 'phone';
+
+        $entires = request()->input('entires');
+
+        if (filter_var($entires , FILTER_VALIDATE_EMAIL)) {
+
+        $get = 'email';
+
         }else{
 
-        return 'email';
+        $get = 'phone';
     }
+
+    request()->merge([$get => $entires]);
+
+    return $get;
 
   }
     
