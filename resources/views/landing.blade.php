@@ -6,11 +6,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
-                        <h2 class="text-white mb-4">Built with Bootstrap 4</h2>
+                        <h2 class="text-white mb-4">{{ config('app.name', 'Laravel') }} App Is Now Launched</h2>
                         <p class="text-white-50">
-                            Grayscale is a free Bootstrap theme created by Start Bootstrap. It can be yours right now, simply download the template on
-                            <a href="https://startbootstrap.com/theme/grayscale/">the preview page</a>
-                            . The theme is open source, and you can use it for any purpose, personal or commercial.
+                           You Can Do Many With {{ config('app.name', 'Laravel') }} App For Now It's All For Free
+                            <a href="register">the Register page</a>
+                            . It's All For Free To All Users Made By <a href="http://fb.com/mah20oud">Mahmoud Ali</a>.
                         </p>
                     </div>
                 </div>

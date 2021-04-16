@@ -6,14 +6,15 @@
 |--------------------------------------------------------------------------------
 */
 
-
-Route::get('/admina' , function () {
+Route::get('/admins' , function () {
  	return "This is the admin panel";
-}) ->name('admina');
+}) ->name('admins');
+
 
 Route::namespace('Users')->group(function(){
-		Route::get('user' , 'appController@AdminName');
+		Route::get('user' , 'appController@AdminName')->middleware('auth');
 });
+
 
 
 Route::group(['prefix' => 'welcom'],function(){
@@ -21,3 +22,4 @@ Route::group(['prefix' => 'welcom'],function(){
 		return 'Group Worked';
 	});
 });
+

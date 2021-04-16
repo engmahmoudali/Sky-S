@@ -30,7 +30,7 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="home">Login/SignUp</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="login">Login/SignUp</a></li>
                     </ul>
                 </div>
             </div>
