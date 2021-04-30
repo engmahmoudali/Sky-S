@@ -44,6 +44,8 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->mapAdminRoutes();
 
+        $this->mapInsertsRoutes();
+
         $this->mapApiRoutes();
 
         $this->mapWebRoutes();
@@ -80,6 +82,20 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::namespace($this->namespace)
              ->group(base_path('routes/admin.php'));
+    }
+
+     /**
+     * Define the "inserts" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+
+    protected function mapInsertsRoutes()
+    {
+        Route::namespace($this->namespace)
+             ->group(base_path('routes/inserts.php'));
     }
 
      /**

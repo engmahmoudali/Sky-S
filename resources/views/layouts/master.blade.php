@@ -1,5 +1,5 @@
 @include('layouts.header')
-
+@include('sweetalert::alert')
 
       
         @yield('content')

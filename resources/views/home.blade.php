@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
+
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -13,8 +14,11 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                   
                     You are logged in!
+
+                    <h2>Type Here To Add To DB Try With Laravel</h2>
+                    @include('tools.ftype')
                 </div>
             </div>
         </div>
