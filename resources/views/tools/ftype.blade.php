@@ -11,7 +11,7 @@
     <label for="exampleFormControlInput1">Title</label>
     <input type="text" class="form-control" name = "typetitle" id="exampleFormControlInput1" placeholder="Title Put Here">
     @error('typetitle')
-    <small class="form-text form-danger">{{$errmsg}}</small>
+    <small class="form-text form-danger">{{$messages}}</small>
     @enderror
   </div>
 
@@ -25,7 +25,7 @@
       <option>5</option>
     </select>
     @error('typelit_msg')
-    <small class="form-text form-danger">{{$errmsg}}</small>
+    <small class="form-text form-danger">{{$messages}}</small>
     @enderror
   </div>
  
@@ -33,7 +33,7 @@
     <label for="exampleFormControlTextarea1">Full MSG</label>
     <textarea class="form-control" name="msg" id="exampleFormControlTextarea1" rows="3"></textarea>
     @error('msg')
-    <small class="form-text form-danger">{{$errmsg}}</small>
+    <small class="form-text form-danger">{{$messages}}</small>
     @enderror
   </div>
 

@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Http\Requests\TypeRequest;
 use App\Models\Type;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -13,27 +15,15 @@ class TypeController extends Controller
     }
 
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('signed')->only('verify');
+        $this->middleware('throttle:6,1')->only('verify', 'resend');
+    }
 
-    public function addtype(Request $request) {
 
-        $rules = [
-            'typetitle'   => 'required | unique:types,typetitle',
-            'typelit_msg' => 'required | numeric',
-            'msg'         => 'required'
-        ];
-
-        $errmsg = [
-            'typetitle.required'   => 'هذا الخقل مطلوب كتابته',
-            'typetitle.unique'     => 'هذا العنوان تم كتابته من قبل',
-            'typelit_msg.required' => 'هذا الخقل مطلوب كتابته',
-            'msg.required'         => 'هذا الخقل مطلوب كتابته'
-        ];
-
-            $validator = Validator::make($request->all() , $rules , $errmsg);
-
-            if ($validator -> fails()) {
-                return redirect()->back()->withErrors($validator)->withInputs($request->all());
-            }
+    public function addtype(TypeRequest $request) {
 
         Type::create([
             'typetitle'   => $request -> typetitle,
@@ -45,7 +35,6 @@ class TypeController extends Controller
         // Alert::success('Done' , 'Types is Saved Successfully');
 
           return redirect()->back()->with(['success' => 'تم تخزين المعلومات بنجاح']);
-            
         
     }
 }
