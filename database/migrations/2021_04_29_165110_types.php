@@ -15,6 +15,7 @@ class Types extends Migration
     {
         Schema::create('types' , function (Blueprint $table) {
             $table->BigIncrements('id');
+            $table->string('photo');
             $table->string('typetitle');
             $table->string('typelit_msg');
             $table->text('msg');

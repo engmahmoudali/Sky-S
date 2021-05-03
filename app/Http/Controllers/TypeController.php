@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\TypeRequest;
 use App\Models\Type;
+use App\Traites\Up_photos;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Validator;
@@ -25,6 +26,9 @@ class TypeController extends Controller
 
     public function addtype(TypeRequest $request) {
 
+        
+        $file_name = upload_ph ( $request -> photo , 'images/types');
+
         Type::create([
             'typetitle'   => $request -> typetitle,
             'typelit_msg' => $request -> typelit_msg,
@@ -35,6 +39,6 @@ class TypeController extends Controller
         // Alert::success('Done' , 'Types is Saved Successfully');
 
           return redirect()->back()->with(['success' => 'تم تخزين المعلومات بنجاح']);
-        
+            
     }
 }

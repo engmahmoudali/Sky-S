@@ -11,6 +11,8 @@
 |
 */
 
+
+
 Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]] , function () {
 
 Route::get('/', function () {
@@ -36,6 +38,11 @@ Route::get('/fc' , 'Fcontroller@fcweb');
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+
+Route::get('/tryup' , function () {
+    return view('tryup');
+});
+
 
 
 

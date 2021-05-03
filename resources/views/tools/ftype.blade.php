@@ -16,6 +16,14 @@
   </div>
 
   <div class="form-group">
+    <label for="exampleFormControlInput1">Title</label>
+    <input type="file" class="form-control" name = "photo" id="exampleFormControlInput1" placeholder="Title Put Here">
+    @error('photo')
+    <small class="form-text form-danger">{{$messages}}</small>
+    @enderror
+  </div>
+  
+  <div class="form-group">
     <label for="exampleFormControlSelect1">Lit MSG</label>
     <select class="form-control" name ="typelit_msg" id="exampleFormControlSelect1">
       <option>1</option>
